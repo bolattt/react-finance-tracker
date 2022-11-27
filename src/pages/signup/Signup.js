@@ -13,8 +13,9 @@ const Signup = () => {
 
   return (
     <form className={styles["signup-form"]} onSubmit={handleSubmit}>
+      <h2>Signup</h2>
       <label>
-        Name
+        <span>Name:</span>
         <input
           type="text"
           onChange={(e) => setName(e.target.value)}
@@ -22,7 +23,7 @@ const Signup = () => {
         />
       </label>
       <label>
-        Email
+        <span>Email:</span>
         <input
           type="email"
           onChange={(e) => setEmail(e.target.value)}
@@ -30,14 +31,14 @@ const Signup = () => {
         />
       </label>
       <label>
-        Password
+        <span>Password:</span>
         <input
           type="password"
           onChange={(e) => setPassword(e.target.value)}
           value={password}
         />
       </label>
-      <button className="btn">Sumbit</button>
+      <button className="btn">Signup</button>
     </form>
   );
 };
