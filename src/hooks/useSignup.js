@@ -1,13 +1,13 @@
 import { useState } from "react";
 import { projectAuth } from "../firebase/config";
 
-const useSignup = () => {
+export const useSignup = () => {
   const [error, setError] = useState(null);
   const [isPending, setIsPending] = useState(false);
 
   const signup = async (email, password, displayName) => {
     setError(null);
-    isPending(true);
+    setIsPending(true);
     try {
       // signup user
       const res = await projectAuth.createUserWithEmailAndPassword(
@@ -25,8 +25,8 @@ const useSignup = () => {
 
       setIsPending(false);
       setError(null);
-    } catch (e) {
-      console.log(e.message);
+    } catch (err) {
+      console.log(err.message);
       setError(err.message);
       setIsPending(false);
     }
@@ -34,5 +34,3 @@ const useSignup = () => {
 
   return { error, isPending, signup };
 };
-
-export default useSignup;
