@@ -16,8 +16,8 @@ export const useLogin = () => {
     try {
       const res = await projectAuth.signInWithEmailAndPassword(email, password);
 
-      // dispatch logout action
-      dispatch({ type: "LOGOUT", playload: res.user });
+      // dispatch Login action
+      dispatch({ type: "LOGIN", playload: res.user });
 
       // update state
       if (!isCancelled) {
