@@ -17,4 +17,17 @@ const firestoreReducer = (state, action) => {
 export const useFirestore = (collection) => {
   const [response, dispatch] = useReducer(firestoreReducer, initialState);
   const [canelled, setIsCancelled] = useState(false);
+
+  // collection ref
+  const ref = projectFirestore.collection(collection);
+
+  // add a document
+  const addDocument = (doc) => {};
+
+  // delete document
+  const deleteDocument = (id) => {};
+
+  useEffect(() => {
+    return () => setIsCancelled(true);
+  }, []);
 };
